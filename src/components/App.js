@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
+import AddContactForm from './AddContactForm';
 import data from './data';
+import './App.css';
 
 
 class App extends Component {
@@ -14,19 +16,18 @@ class App extends Component {
     ))
   }
 
-  handleClick = e => {
-    e.preventDefault()
+  addContact = newContactInfo => {
     const contacts = this.state.contacts
     const newId = contacts[contacts.length - 1].id + 1
     this.setState({
-      contacts: [...this.state.contacts, { id: newId, name: `Name-${newId}`, email: `name-${newId}@example.com` } ]
+      contacts: [...this.state.contacts, { id: newId, name: newContactInfo.name , email: newContactInfo.email } ]
     })
   }
-  
+
   render() {
     return (
-      <div id="App">
-        <a href="#" className="pure-button" onClick={this.handleClick}>Add Contact</a>
+      <div id="App" className="pure-container">
+        <AddContactForm addContact={this.addContact}/>
         <div className="pure-g">
           {this.renderContacts()}
         </div>
