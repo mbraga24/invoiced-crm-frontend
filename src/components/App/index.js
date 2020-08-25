@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>App</h1>
+    <div className="pure-g">
+      <div className="pure-u-1-3">First</div>
+      <div className="pure-u-1-3">Second</div>
+      <div className="pure-u-1-3">Third</div>
     </div>
   );
 }
