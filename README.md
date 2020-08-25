@@ -10,7 +10,11 @@ npx create-react-app invoiced-crm-frontend app
  npm install purecss --save   
 
 ```
-_Import purecss in the index.js file_
+__index.js__
 ```
-import 'purecss/build/pure.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'purecss/build/pure.css'; <============== import purecss
+import App from './components/App/index';
+import * as serviceWorker from './serviceWorker';
 ```
