@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
-import Contact from './Contact';
-import AddContactForm from './AddContactForm';
+import { Switch, Route } from 'react-router-dom';
 import data from './data';
-import './App.css';
-
+import Layout from './Layout';
+// import './App.css';
 
 class App extends Component {
+
   state = {
     contacts: data
-  }
-
-  renderContacts = () => {
-    return this.state.contacts.map(info => (
-      <Contact key={info.id} { ...info } />
-    ))
   }
 
   addContact = newContactInfo => {
@@ -26,11 +20,10 @@ class App extends Component {
 
   render() {
     return (
-      <div id="App" className="pure-container">
-        <AddContactForm addContact={this.addContact}/>
-        <div className="pure-g">
-          {this.renderContacts()}
-        </div>
+      <div id="App">
+        <Switch>
+          <Route exact path="/" render={() => <Layout contacts={this.state.contacts}/>} />
+        </Switch>
       </div>
     );
   }
