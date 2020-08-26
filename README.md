@@ -10,7 +10,7 @@ npx create-react-app invoiced-crm-frontend app
  npm install purecss --save   
 
 ```
-__Import__
+_Import the pure.css file_
 ```
 =============
   index.js
@@ -30,7 +30,7 @@ npm install --save react-router-dom
 * **Route** is the conditionally shown component based on matching a path to a URL.
 * **Switch** returns only the first matching route rather than all matching routes.
 
-__Import__
+_Import components from react-router-dom_
 ```
 =============
   index.js
@@ -38,7 +38,7 @@ __Import__
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'purecss/build/pure.css';
-import { BrowserRouter as Router } from 'react-router-dom'; <========== import react-router-dom
+import { BrowserRouter as Router } from 'react-router-dom'; <========== import
 import App from './components/App.js';
 import './index.css';
 ```
@@ -51,4 +51,12 @@ ReactDOM.render(
   </Router>, <========== close!
   document.getElementById('root')
 );
+```
+_Import components from react-router-dom to properly route your components
+```
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom'; <========== import
+import data from './data';
+import Layout from './Layout';
+import './App.css';
 ```
