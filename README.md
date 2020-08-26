@@ -21,15 +21,15 @@ import 'purecss/build/pure.css'; <============== import purecss
 import App from './components/App.js';
 ```
 ### Install react-router-dom
-#### Review:
+```
+npm install --save react-router-dom
+```
+#### Quick review:
 * BrowserRouter is the router implementation for HTML5 browsers (vs Native). 
 * Link is your replacement for anchor tags.
 * Route is the conditionally shown component based on matching a path to a URL.
 * Switch returns only the first matching route rather than all matching routes.
 
-```
-npm install --save react-router-dom
-```
 __Import__
 ```
 =============
