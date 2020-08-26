@@ -17,7 +17,7 @@ __Import__
 =============
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'purecss/build/pure.css'; <========== import purecss
+import 'purecss/build/pure.css'; // <========== import purecss
 import App from './components/App.js';
 ```
 ### Install react-router-dom
@@ -38,7 +38,7 @@ __Import__
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'purecss/build/pure.css';
-import { BrowserRouter as Router } from 'react-router-dom'; <========== import react-router-dom
+import { BrowserRouter as Router } from 'react-router-dom'; // <========== import react-router-dom
 import App from './components/App.js';
 import './index.css';
 ```
@@ -46,9 +46,9 @@ _Wrap the the Router component around the App component_
 
 ```
 ReactDOM.render(
-  <Router> <========== open!
+  <Router> // <========== open!
     <App />
-  </Router>, <========== close!
+  </Router>, // <========== close!
   document.getElementById('root')
 );
 ```
