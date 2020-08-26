@@ -18,7 +18,7 @@ _Import the pure.css file_
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'purecss/build/pure.css'; <========== import purecss
-import App from './components/App.js';
+import App from './App';
 ```
 ### Install react-router-dom
 ```
@@ -32,19 +32,22 @@ npm install --save react-router-dom
 
 _Import components from react-router-dom_
 ```
-=============
-  index.js
-=============
+================
+    index.js
+================
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'purecss/build/pure.css';
 import { BrowserRouter as Router } from 'react-router-dom'; <========== import
-import App from './components/App.js';
+import App from './App';
 import './index.css';
 ```
 _Wrap the the Router component around the App component_
 
 ```
+================
+    index.js    
+================
 ReactDOM.render(
   <Router> <========== open!
     <App />
@@ -52,11 +55,25 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-_Import components from react-router-dom to properly route your components
+_Import components from react-router-dom to properly route your components_
 ```
+==============
+    App.js    
+==============
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'; <========== import
-import data from './data';
-import Layout from './Layout';
 import './App.css';
+```
+_Wrap the the Switch component around all your Route components_
+```
+render() {
+  return (
+    <div id="App">
+      <Switch>
+        <Route exact path="/" render={() => <Home />} />
+        <Route path="/login" render={() => <Login />} />
+      </Switch>
+    </div>
+  );
+}
 ```
