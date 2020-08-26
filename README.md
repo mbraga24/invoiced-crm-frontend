@@ -18,7 +18,7 @@ __Import__
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'purecss/build/pure.css'; <============== import purecss
-import App from './components/App/index';
+import App from './components/App.js';
 ```
 ### Install react-router-dom
 #### About react router
