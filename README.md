@@ -42,3 +42,13 @@ import { BrowserRouter as Router } from 'react-router-dom'; <============== impo
 import App from './components/App.js';
 import './index.css';
 ```
+_Wrap the the Router component around the App component_
+
+```
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('root')
+);
+```
