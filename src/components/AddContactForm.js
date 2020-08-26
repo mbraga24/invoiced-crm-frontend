@@ -13,6 +13,7 @@ class AddContactForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
+    console.log(this.state)
     this.props.addContact(this.state)
     this.setState({
       email: "",

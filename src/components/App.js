@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div id="App">
         <Switch>
-          <Route exact path="/" render={() => <Layout contacts={this.state.contacts}/>} />
+          <Route exact path="/" render={() => <Layout addContact={this.addContact} contacts={this.state.contacts}/>} />
         </Switch>
       </div>
     );

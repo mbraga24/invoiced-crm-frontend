@@ -12,10 +12,10 @@ class Layout extends Component {
   }
 
   render() {
-    // console.log(this.props.contacts)
+    console.log(this.props.contacts)
     return (
       <div id="Layout" className="pure-container">
-        <AddContactForm addContact={this.addContact}/>
+        <AddContactForm addContact={this.props.addContact}/>
         <div className="pure-g">
           {this.renderContacts()}
         </div>
