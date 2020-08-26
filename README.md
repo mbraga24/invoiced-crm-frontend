@@ -66,6 +66,9 @@ import './App.css';
 ```
 _Wrap the the Switch component around all your Route components_
 ```
+==============
+    App.js    
+==============
 render() {
   return (
     <div id="App">
