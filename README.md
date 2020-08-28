@@ -84,7 +84,7 @@ render() {
 ```
 npm install node-sass --save
 ```
-Follow [guide](https://create-react-app.dev/docs/adding-a-sass-stylesheet/).
+* Follow [guide](https://create-react-app.dev/docs/adding-a-sass-stylesheet/).
 
 Change the file extensions from .css to .scss or .sass in the file tree and on your imports.
 
