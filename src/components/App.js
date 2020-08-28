@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import data from './data';
-import Layout from './Layout';
+import Collection from './Collection';
+import Show from './Show';
 // import './App.css';
 
 class App extends Component {
@@ -22,7 +23,9 @@ class App extends Component {
     return (
       <div id="App">
         <Switch>
-          <Route exact path="/" render={() => <Layout addContact={this.addContact} contacts={this.state.contacts}/>} />
+          <Route exact path="/contacts" render={() => <Collection addContact={this.addContact} contacts={this.state.contacts}/>} />
+          <Route path="/contacts/:contactId" component={Show} />
+          <Redirect from="/" to="/contacts" />
         </Switch>
       </div>
     );

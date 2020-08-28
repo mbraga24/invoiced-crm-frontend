@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
 import AddContactForm from './AddContactForm';
-import './Layout.css';
+import './Collection.css';
 
-class Layout extends Component {
+class Collection extends Component {
 
   renderContacts = () => {
     return this.props.contacts.map(info => (
@@ -14,7 +14,7 @@ class Layout extends Component {
   render() {
     console.log(this.props.contacts)
     return (
-      <div id="Layout" className="pure-container">
+      <div id="Collection" className="pure-container">
         <AddContactForm addContact={this.props.addContact}/>
         <div className="pure-g">
           {this.renderContacts()}
@@ -24,4 +24,4 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default Collection;
