@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import data from './data';
 import Collection from './Collection';
 import Show from './Show';
-import styles from './App.module.scss';
+import styles from './App.module.sass';
 
 const App = () => {
 
