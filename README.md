@@ -90,6 +90,6 @@ Change the file extensions from .css to .scss or .sass in the file tree and on y
 
 ### Using CSS Modules Stylesheet
 
-Follow [guide](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/).
-Extre [resource](https://www.robinwieruch.de/create-react-app-css-modules).
+* Follow [guide](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/).
+* Extra [resource](https://www.robinwieruch.de/create-react-app-css-modules).
 
