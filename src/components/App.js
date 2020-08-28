@@ -1,35 +1,32 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import data from './data';
 import Collection from './Collection';
 import Show from './Show';
 // import './App.css';
 
-class App extends Component {
+const App = () => {
 
-  state = {
-    contacts: data
-  }
+  const [ contacts, setContacts ] = useState([])
 
-  addContact = newContactInfo => {
-    const contacts = this.state.contacts
+  useEffect(() => {
+    setContacts(data)
+  }, [data])
+
+  const addContact = newContactInfo => {
     const newId = contacts[contacts.length - 1].id + 1
-    this.setState({
-      contacts: [...this.state.contacts, { id: newId, name: newContactInfo.name , email: newContactInfo.email } ]
-    })
+    setContacts([...this.state.contacts, { id: newId, name: newContactInfo.name , email: newContactInfo.email } ])
   }
 
-  render() {
-    return (
-      <div id="App">
-        <Switch>
-          <Route exact path="/contacts" render={() => <Collection addContact={this.addContact} contacts={this.state.contacts}/>} />
-          <Route path="/contacts/:contactId" component={Show} />
-          <Redirect from="/" to="/contacts" />
-        </Switch>
-      </div>
-    );
-  }
+  return (
+    <div id="App">
+      <Switch>
+        <Route exact path="/contacts" render={() => <Collection addContact={addContact} contacts={contacts}/>} />
+        <Route path="/contacts/:contactId" component={Show} />
+        <Redirect from="/" to="/contacts" />
+      </Switch>
+    </div>
+  );
 }
 
 export default App;
