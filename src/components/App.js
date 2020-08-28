@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import data from './data';
 import Collection from './Collection';
 import Show from './Show';
-// import './App.css';
+import styles from './App.module.scss';
 
 const App = () => {
 
@@ -19,7 +19,7 @@ const App = () => {
   }
 
   return (
-    <div id="App">
+    <div id="App" className={styles.main}>
       <Switch>
         <Route exact path="/contacts" render={() => <Collection addContact={addContact} contacts={contacts}/>} />
         <Route path="/contacts/:contactId" component={Show} />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddContactForm.module.scss';
 
 class AddContactForm extends Component {
 

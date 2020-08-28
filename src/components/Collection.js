@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
 import AddContactForm from './AddContactForm';
-import './Collection.css';
 
 const Collection = props => {
 
