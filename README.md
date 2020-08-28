@@ -80,3 +80,8 @@ render() {
   );
 }
 ```
+### Install SASS
+```
+npm install node-sass --save
+```
+Follow this [guide](https://create-react-app.dev/docs/adding-a-sass-stylesheet/)
