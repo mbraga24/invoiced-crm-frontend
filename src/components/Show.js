@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import data from './data'
 
 const Show = ({ match }) => {
-  // console.log("DATA:", match.params.contactId)
-  console.log("DATA:", data)
-  const contact = data.find(({ id }) => id === parseInt(match.params.contactId))
+  const [ contact, setContact ] = useState({})
+
+  useEffect(() => {
+    setContact(data.find(({ id }) => id === parseInt(match.params.contactId)))
+  }, [data])
   
   return( 
     <>
