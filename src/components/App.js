@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     setContacts(data)
-  }, [data])
+  }, [])
 
   const addContact = newContactInfo => {
     const newId = contacts[contacts.length - 1].id + 1

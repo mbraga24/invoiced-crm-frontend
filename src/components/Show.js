@@ -6,7 +6,7 @@ const Show = ({ match }) => {
 
   useEffect(() => {
     setContact(data.find(({ id }) => id === parseInt(match.params.contactId)))
-  }, [data])
+  }, [match.params.contactId])
   
   return( 
     <>
