@@ -23,6 +23,7 @@ class AddContactForm extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="pure-g">
         <div className="pure-u-12-24">

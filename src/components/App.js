@@ -14,8 +14,10 @@ const App = () => {
   }, [])
 
   const addContact = newContactInfo => {
+    console.log("New Contact Info:", newContactInfo)
     const newId = contacts[contacts.length - 1].id + 1
-    setContacts([...this.state.contacts, { id: newId, name: newContactInfo.name , email: newContactInfo.email } ])
+    console.log(newId)
+    setContacts([...contacts, { id: newId, name: newContactInfo.name , email: newContactInfo.email } ])
   }
 
   return (
