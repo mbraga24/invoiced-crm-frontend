@@ -99,6 +99,7 @@ Change the file extensions from .css to .scss or .sass in the file tree and on y
 
 ### React Redux Setup
 
+#### React Redux setup
 * Install 'redux' and 'react-redux'
 * Create reducer function and default state
 * Create 'store' with 'createStore'
