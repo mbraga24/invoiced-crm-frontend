@@ -93,6 +93,6 @@ Change the file extensions from .css to .scss or .sass in the file tree and on y
 * Follow [guide](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/).
 * Extra [resource](https://www.robinwieruch.de/create-react-app-css-modules).
 
-### Find _webpack.config.js_ file (You will have to create your own webpack.config.js file if you wish to customize)
+### Find _webpack.config.js_ file (To customize webpack.config.js file you will need to create it from scratch.)
 
 [Source](https://stackoverflow.com/questions/48395804/where-is-create-react-app-webpack-config-and-files).
