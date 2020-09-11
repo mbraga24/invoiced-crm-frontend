@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import data from './data'
+import { useSelector } from 'react-redux';
 
 const Show = ({ match }) => {
   const [ contact, setContact ] = useState({})
+  const contacts = useSelector(state => state.contacts)
 
   useEffect(() => {
-    setContact(data.find(({ id }) => id === parseInt(match.params.contactId)))
+    setContact(contacts.find(({ id }) => id === parseInt(match.params.contactId)))
   }, [match.params.contactId])
   
   return( 
