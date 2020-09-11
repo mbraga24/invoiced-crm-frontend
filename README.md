@@ -164,5 +164,10 @@ ReactDOM.render(
   document.getElementById('root')
 ```
 
-
 Consult the docs: [redux.js.org](https://redux.js.org/introduction/getting-started)
+
+#### Reading State with Hooks
+1. Import 'useSelector' in your component
+2. Write a selector function to return whatever piece of state is important to your component
+
+#### Import 'useSelector' in your component
