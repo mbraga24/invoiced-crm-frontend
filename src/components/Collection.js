@@ -1,11 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Contact from './Contact';
 import AddContactForm from './AddContactForm';
 
-const Collection = props => {
+const Collection = (props) => {
 
+  const contacts = useSelector(state => state.contacts)
+  
   const renderContacts = () => {
-    return props.contacts.map(info => (
+    return contacts.map(info => (
       <Contact key={info.id} { ...info } />
     ))
   }

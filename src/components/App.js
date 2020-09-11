@@ -8,8 +8,9 @@ import styles from './App.module.sass';
 const App = () => {
 
   useEffect(() => {
-    // setContacts(data)
-
+    fetch("http://localhost:3000/v1/contacts")
+    .then(r => r.json())
+    .then(console.log)
   }, [])
 
   const contacts = useSelector(state => state.contacts)
