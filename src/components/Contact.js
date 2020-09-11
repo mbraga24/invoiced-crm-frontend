@@ -8,7 +8,7 @@ const Contact = props => {
     <div className={`${styles.contact} pure-u-1-3`}>
       <h2>
         <Link to={`/contacts/${props.id}`}>
-          {props.name}
+          {props.first_name} {props.last_name}
         </Link>
       </h2>
       <p>{props.email}</p>

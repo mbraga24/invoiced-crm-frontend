@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Collection from './Collection';
 import Show from './Show';
 import styles from './App.module.sass';
 
 const App = () => {
 
+  const dispatch = useDispatch()
+  const contacts = useSelector(state => state.contacts)
+
   useEffect(() => {
     fetch("http://localhost:3000/v1/contacts")
     .then(r => r.json())
-    .then(console.log)
+    .then(contacts => dispatch({ type: "SET_CONTACTS", payload: contacts }))
   }, [])
-
-  const contacts = useSelector(state => state.contacts)
 
   const addContact = newContactInfo => {
     console.log("New Contact Info:", newContactInfo)
