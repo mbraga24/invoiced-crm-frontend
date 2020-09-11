@@ -1,17 +1,29 @@
+import { SET_CONTACTS, ADD_CONTACT, REMOVE_CONTACT } from '../store/type';
+
 const defaultContacts = {
-  contacts: [
-    { id: 1, name: 'Andrew', email: 'andrew@example.com' },
-    { id: 2, name: 'Mark', email: 'mark@example.com' },
-    { id: 3, name: 'Sarah', email: 'sarah@example.com' }
-  ]
+  contacts: [],
 }
 
 const reducer = (state = defaultContacts, action) => {
+  console.log("REDUCER: ", action)
+  console.log("REDUCER: ", state.contacts)
   switch(action.type) {
-    case "SET CONTACTS": 
+    case SET_CONTACTS: 
       return {
         ...state,
         contacts: action.payload
+      }
+    case ADD_CONTACT:
+      return {
+        ...state,
+        contacts: [...state.contacts, action.payload]
+      }
+    case REMOVE_CONTACT: 
+      const updatedContacts = state.contacts.filter(contact => contact.id !== action.payload)
+
+      return {
+        ...state,
+        contacts: [...updatedContacts]
       }
     default:
       return state

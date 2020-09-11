@@ -197,3 +197,39 @@ const renderContacts = () => {
 3. Call 'dispatch' with an action object: `{ type: "ACTION_TYPE, payload: data "}`
 4. In your reducer, write code to handle the action type and return the new state
 
+```
+===============
+    app.js
+===============
+
+import { useDispatch, useSelector } from 'react-redux';
+
+  const dispatch = useDispatch() <======== Assign dispatch variable
+
+  useEffect(() => {
+    fetch("http://localhost:3000/v1/contacts")
+    .then(r => r.json())
+    // set your dispatch with the type and payload
+    .then(contacts => dispatch({ type: SET_CONTACTS, payload: contacts }))
+  }, [])
+
+===========================
+    store -> reducer.js   
+===========================
+
+const defaultContacts = {
+  contacts: []
+}
+
+const reducer = (state = defaultContacts, action) => {
+  switch(action.type) {
+    case SET_CONTACTS: 
+      return {
+        ...state,
+        contacts: action.payload
+      }
+    default:
+      return state
+  }
+}
+```

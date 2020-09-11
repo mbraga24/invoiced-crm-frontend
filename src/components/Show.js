@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 const Show = ({ match }) => {
-  const [ contact, setContact ] = useState({})
   const contacts = useSelector(state => state.contacts)
+  const [ contact, setContact ] = useState({})
 
   useEffect(() => {
-    setContact(contacts.find(({ id }) => id === parseInt(match.params.contactId)))
-  }, [match.params.contactId])
+    const contact = contacts.find(({ id }) => id === parseInt(match.params.contactId))
+    setContact(contact)
+  }, [])
   
   return( 
     <>
-      <h1>{contact.name}</h1>
+      <h1>{contact.first_name} {contact.last_name}</h1>
       <h2>{contact.email}</h2>
     </>
   )
