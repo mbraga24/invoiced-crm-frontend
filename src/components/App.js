@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div id="App" className={styles.main}>
       <Switch>
-        <Route exact path="/contacts" render={() => <Collection addContact={addContact} contacts={contacts}/>} />
+        <Route exact path="/contacts" render={() => <Collection addContact={addContact} />} />
         <Route path="/contacts/:contactId" component={Show} />
         <Redirect from="/" to="/contacts" />
       </Switch>
