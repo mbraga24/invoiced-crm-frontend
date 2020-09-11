@@ -157,10 +157,10 @@ import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router> 
+    <Router> <============ Wrap
       <App />
     </Router>
-  </Provider>,
+  </Provider>, <========== Wrap
   document.getElementById('root')
 ```
 
