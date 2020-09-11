@@ -7,9 +7,10 @@ import styles from './App.module.sass';
 
 const App = () => {
 
-  // useEffect(() => {
-  //   setContacts(data)
-  // }, [])
+  useEffect(() => {
+    // setContacts(data)
+
+  }, [])
 
   const contacts = useSelector(state => state.contacts)
 

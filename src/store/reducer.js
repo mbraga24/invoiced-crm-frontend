@@ -8,6 +8,11 @@ const defaultContacts = {
 
 const reducer = (state = defaultContacts, action) => {
   switch(action.type) {
+    case "SET CONTACTS": 
+      return {
+        ...state,
+        contacts: action.payload
+      }
     default:
       return state
   }
