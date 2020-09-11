@@ -5,11 +5,12 @@ class AddContactForm extends Component {
 
   state = {
     email: "",
-    name: ""
+    firstName: "",
+    lastName: ""
   }
 
   handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value })
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   handleSubmit = e => {
@@ -18,7 +19,8 @@ class AddContactForm extends Component {
     this.props.addContact(this.state)
     this.setState({
       email: "",
-      name: ""
+      firstName: "",
+      lastName: ""
     });
   }
 
@@ -31,7 +33,8 @@ class AddContactForm extends Component {
             <fieldset>
                 <legend>New Contact</legend>
                 <input name="email" type="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
-                <input name="name" type="text" placeholder="Name" value={this.state.name} onChange={this.handleChange} />
+                <input name="firstName" type="text" placeholder="First Name" value={this.state.firstName} onChange={this.handleChange} />
+                <input name="lastName" type="text" placeholder="Last Name" value={this.state.lastName} onChange={this.handleChange} />
                 <button type="submit" className="pure-button pure-button-primary">Add</button>
             </fieldset>
           </form>

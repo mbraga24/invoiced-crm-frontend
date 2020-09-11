@@ -6,8 +6,9 @@ import AddContactForm from './AddContactForm';
 const Collection = (props) => {
 
   const contacts = useSelector(state => state.contacts)
-  
+
   const renderContacts = () => {
+    console.log("RENDER CONTACTS FROM COLLECTION:", contacts)
     return contacts.map(info => (
       <Contact key={info.id} { ...info } />
     ))

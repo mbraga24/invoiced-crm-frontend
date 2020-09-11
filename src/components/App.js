@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { SET_CONTACTS, ADD_CONTACT } from '../store/type';
 import Collection from './Collection';
 import Show from './Show';
 import styles from './App.module.sass';
@@ -13,14 +14,12 @@ const App = () => {
   useEffect(() => {
     fetch("http://localhost:3000/v1/contacts")
     .then(r => r.json())
-    .then(contacts => dispatch({ type: "SET_CONTACTS", payload: contacts }))
+    .then(contacts => dispatch({ type: SET_CONTACTS, payload: contacts }))
   }, [])
 
   const addContact = newContactInfo => {
-    console.log("New Contact Info:", newContactInfo)
     const newId = contacts[contacts.length - 1].id + 1
-    console.log(newId)
-    // setContacts([...contacts, { id: newId, name: newContactInfo.name , email: newContactInfo.email } ])
+    dispatch({ type: ADD_CONTACT, payload: { id: newId, first_name: newContactInfo.firstName, last_name: newContactInfo.lastName, email: newContactInfo.email } })
   }
   
   // console.log("APP COMP:", contacts)
