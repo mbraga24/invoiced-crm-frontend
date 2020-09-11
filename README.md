@@ -105,11 +105,11 @@ Change the file extensions from .css to .scss or .sass in the file tree and on y
 3. Create 'store' with 'createStore'
 4. Create 'Provider' at the top level of component hierarchy with the 'store' as a prop
 
-1. Install 'redux' and 'react-redux'
+#### Install 'redux' and 'react-redux'
 ```
 npm install redux react-redux
 ```
-2. Create reducer function and default state
+#### Create reducer function and default state
 ```
 ===================================
      src -> store -> reducer.js    
@@ -131,7 +131,7 @@ const reducer = (state = defaultContacts, action) => {
 
 export default reducer
 ```
-3. Create 'store' with 'createStore'
+#### Create 'store' with 'createStore'
 ```
 ===================================
      src -> store -> index.js    
@@ -143,7 +143,7 @@ const store = createStore(reducer)
 
 export default store
 ```
-4. Create 'Provider' at the top level of component hierarchy with the 'store' as a prop
+#### Create 'Provider' at the top level of component hierarchy with the 'store' as a prop
 ```
 
 import React from 'react';
