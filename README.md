@@ -99,12 +99,46 @@ Change the file extensions from .css to .scss or .sass in the file tree and on y
 
 ### React Redux Setup
 
-#### React Redux setup
-* Install 'redux' and 'react-redux'
-* Create reducer function and default state
-* Create 'store' with 'createStore'
-* Create 'Provider' at the top level of component hierarchy with the 'store' as a prop
+#### Basic setup
+4. Create 'Provider' at the top level of component hierarchy with the 'store' as a prop
 
+1. Install 'redux' and 'react-redux'
 ```
 npm install redux react-redux
 ```
+2. Create reducer function and default state
+```
+===================================
+     src -> store -> reducer.js    
+===================================
+const defaultContacts = {
+  contacts: [
+    { id: 1, name: 'Andrew', email: 'andrew@example.com' },
+    { id: 2, name: 'Mark', email: 'mark@example.com' },
+    { id: 3, name: 'Sarah', email: 'sarah@example.com' }
+  ]
+}
+
+const reducer = (state = defaultContacts, action) => {
+  switch(action.type) {
+    default:
+      return state
+  }
+}
+
+export default reducer
+```
+3. Create 'store' with 'createStore'
+```
+===================================
+     src -> store -> index.js    
+===================================
+import { createStore } from 'redux'
+import reducer from './reducer'
+
+const store = createStore(reducer)
+
+export default store
+```
+
+Consult the docs: [redux.js.org](https://redux.js.org/introduction/getting-started)
