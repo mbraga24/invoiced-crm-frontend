@@ -182,6 +182,18 @@ import { useSelector } from 'react-redux'; <========== import
 // retrieve contacts from store
 const contacts = useSelector(state => state.contacts)
 
-
+// use the data retrieved from store
+const renderContacts = () => {
+  return contacts.map(info => (
+    <Contact key={info.id} { ...info } />
+  ))
+}
 
 ```
+
+#### Updating State with Hooks
+1. Import 'useDispatch' in your component
+2. Call 'useDispatch' to get access to the 'dispatch' function
+3. Call 'dispatch' with an action object: `{ type: "ACTION_TYPE, payload: data "}`
+4. In your reducer, write code to handle the action type and return the new state
+
