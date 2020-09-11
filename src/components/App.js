@@ -15,7 +15,7 @@ const App = () => {
     fetch("http://localhost:3000/v1/contacts")
     .then(r => r.json())
     .then(contacts => dispatch({ type: SET_CONTACTS, payload: contacts }))
-  }, [])
+  }, [dispatch])
 
   const addContact = newContactInfo => {
     const newId = contacts[contacts.length - 1].id + 1
