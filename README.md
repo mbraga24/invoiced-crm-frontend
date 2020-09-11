@@ -100,6 +100,9 @@ Change the file extensions from .css to .scss or .sass in the file tree and on y
 ### React Redux Setup
 
 #### Basic setup
+1. Install 'redux' and 'react-redux'
+2. Create reducer function and default state
+3. Create 'store' with 'createStore'
 4. Create 'Provider' at the top level of component hierarchy with the 'store' as a prop
 
 1. Install 'redux' and 'react-redux'
@@ -140,5 +143,26 @@ const store = createStore(reducer)
 
 export default store
 ```
+4. Create 'Provider' at the top level of component hierarchy with the 'store' as a prop
+```
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'purecss/build/pure.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux' <========== import
+import store from './store' <===================== import
+import App from './App';
+import './index.css';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router> 
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById('root')
+```
+
 
 Consult the docs: [redux.js.org](https://redux.js.org/introduction/getting-started)
