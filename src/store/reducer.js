@@ -1,8 +1,7 @@
-import { SET_CONTACTS, ADD_CONTACT } from '../store/type';
+import { SET_CONTACTS, ADD_CONTACT, REMOVE_CONTACT } from '../store/type';
 
 const defaultContacts = {
   contacts: [],
-  contactInfo: {}
 }
 
 const reducer = (state = defaultContacts, action) => {
@@ -18,6 +17,13 @@ const reducer = (state = defaultContacts, action) => {
       return {
         ...state,
         contacts: [...state.contacts, action.payload]
+      }
+    case REMOVE_CONTACT: 
+      const updatedContacts = state.contacts.filter(contact => contact.id !== action.payload)
+
+      return {
+        ...state,
+        contacts: [...updatedContacts]
       }
     default:
       return state
