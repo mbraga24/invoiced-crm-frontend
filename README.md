@@ -145,7 +145,9 @@ export default store
 ```
 #### Create 'Provider' at the top level of component hierarchy with the 'store' as a prop
 ```
-
+================
+    index.js    
+================
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'purecss/build/pure.css';
@@ -170,4 +172,16 @@ Consult the docs: [redux.js.org](https://redux.js.org/introduction/getting-start
 1. Import 'useSelector' in your component
 2. Write a selector function to return whatever piece of state is important to your component
 
-#### Import 'useSelector' in your component
+```
+==============
+    App.js    
+==============
+
+import { useSelector } from 'react-redux'; <========== import
+
+// retrieve contacts from store
+const contacts = useSelector(state => state.contacts)
+
+
+
+```
