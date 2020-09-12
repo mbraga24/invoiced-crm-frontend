@@ -24,7 +24,6 @@ const App = () => {
       last_name: data.lastName, 
       email: data.email 
     }
-    console.log("ADD CONTACT:", newContact)
     postContact(newContact)
     .then(newContact => dispatch({ type: ADD_CONTACT, payload: newContact.data }))
   }
