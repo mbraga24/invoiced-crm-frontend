@@ -17,17 +17,16 @@ const App = () => {
     .then(contacts => dispatch({ type: SET_CONTACTS, payload: contacts }))
   }, [dispatch])
 
-  const addContact = newContact => {
-    // create contact with the correct 
-    // const newContact = { 
-    //   first_name: newContactInfo.firstName, 
-    //   last_name: newContactInfo.lastName, 
-    //   email: newContactInfo.email 
-    // }
+  const addContact = data => {
+    // create contact with the correct key/values for the backend
+    const newContact = { 
+      first_name: data.firstName, 
+      last_name: data.lastName, 
+      email: data.email 
+    }
+    console.log("ADD CONTACT:", newContact)
     postContact(newContact)
     .then(newContact => dispatch({ type: ADD_CONTACT, payload: newContact }))
-
-    dispatch({ type: ADD_CONTACT, payload: { id: newId, first_name: newContactInfo.firstName, last_name: newContactInfo.lastName, email: newContactInfo.email } })
   }
   
   // console.log("APP COMP:", contacts)

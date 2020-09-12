@@ -4,6 +4,7 @@ export const getContacts = () => {
 }
 
 export const postContact = (contact) => {
+  console.log("POST CONTACT:", contact)
   return fetch(`http://localhost:3000/v1/contacts`, {
     method: 'POST',
     headers: {
@@ -11,4 +12,5 @@ export const postContact = (contact) => {
     },
     body: JSON.stringify(contact)
   })
+  .then(r => r.json())
 }
