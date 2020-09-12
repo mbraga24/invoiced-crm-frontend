@@ -5,6 +5,7 @@ import { SET_CONTACTS, ADD_CONTACT } from '../store/type';
 import { getContacts, postContact } from '../api';
 import Collection from './Contacts/Collection';
 import Show from './Contacts/Show';
+import New from './Sessions/New';
 import styles from './App.module.sass';
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
       <Switch>
         <Route exact path="/contacts" render={() => <Collection addContact={addContact} />} />
         <Route path="/contacts/:contactId" component={Show} />
+        <Route path="/users/sign_in" component={New} />
         <Redirect from="/" to="/contacts" />
       </Switch>
     </div>
