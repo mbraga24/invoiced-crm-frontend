@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 const Show = ({ match }) => {
-  const contacts = useSelector(state => state.contacts)
+  const contacts = useSelector(state => state.contact.contacts)
   const [ contact, setContact ] = useState({})
 
   useEffect(() => {
