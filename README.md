@@ -225,8 +225,8 @@ const reducer = (state = defaultContacts, action) => {
   switch(action.type) {
     case SET_CONTACTS: 
       return {
-        ...state,
-        contacts: action.payload
+        ...state, 
+        contacts: action.payload <======= Set array of contacts to state
       }
     default:
       return state
