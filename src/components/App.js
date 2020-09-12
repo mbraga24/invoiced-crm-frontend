@@ -10,7 +10,7 @@ import styles from './App.module.sass';
 const App = () => {
 
   const dispatch = useDispatch()
-  const contacts = useSelector(state => state.contacts)
+  const contacts = useSelector(state => state.contact.contacts)
 
   useEffect(() => {
     getContacts()

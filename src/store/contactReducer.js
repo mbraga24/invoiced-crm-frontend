@@ -1,10 +1,10 @@
 import { SET_CONTACTS, ADD_CONTACT, REMOVE_CONTACT } from '../store/type';
 
-const defaultContacts = {
+const defaultState = {
   contacts: [],
 }
 
-const reducer = (state = defaultContacts, action) => {
+const reducer = (state = defaultState, action) => {
   console.log("REDUCER: ", action)
   console.log("REDUCER: ", state.contacts)
   switch(action.type) {

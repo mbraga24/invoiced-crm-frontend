@@ -5,7 +5,7 @@ import AddContactForm from './AddContactForm';
 
 const Collection = (props) => {
 
-  const contacts = useSelector(state => state.contacts)
+  const contacts = useSelector(state => state.contact.contacts)
 
   const renderContacts = () => {
     console.log("RENDER CONTACTS FROM COLLECTION:", contacts)
