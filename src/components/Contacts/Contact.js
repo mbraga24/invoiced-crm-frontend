@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { REMOVE_CONTACT } from '../store/type';
-import { deleteContact } from '../api';
+import { REMOVE_CONTACT } from '../../store/type';
+import { deleteContact } from '../../api';
 import styles from './Contact.module.sass';
 
 const Contact = props => {

@@ -3,8 +3,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { SET_CONTACTS, ADD_CONTACT } from '../store/type';
 import { getContacts, postContact } from '../api';
-import Collection from './Collection';
-import Show from './Show';
+import Collection from './Contacts/Collection';
+import Show from './Contacts/Show';
 import styles from './App.module.sass';
 
 const App = () => {
