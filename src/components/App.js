@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     getContacts()
-    .then(contacts => dispatch({ type: SET_CONTACTS, payload: contacts }))
+    .then(contacts => dispatch({ type: SET_CONTACTS, payload: contacts.data }))
   }, [dispatch])
 
   const addContact = data => {
@@ -26,7 +26,7 @@ const App = () => {
     }
     console.log("ADD CONTACT:", newContact)
     postContact(newContact)
-    .then(newContact => dispatch({ type: ADD_CONTACT, payload: newContact }))
+    .then(newContact => dispatch({ type: ADD_CONTACT, payload: newContact.data }))
   }
   
   // console.log("APP COMP:", contacts)
