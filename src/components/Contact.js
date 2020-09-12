@@ -22,12 +22,12 @@ const Contact = props => {
         </Link>
       </h2>
       <p>{props.email}</p>
-      <a href="#"
+      <button
         className={`${styles.removeButton} pure-button`}
         onClick={removeContact}
       >
         Remove
-      </a>
+      </button>
     </div>
   )
 }

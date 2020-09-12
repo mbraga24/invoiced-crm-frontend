@@ -8,7 +8,7 @@ const Show = ({ match }) => {
   useEffect(() => {
     const contact = contacts.find(({ id }) => id === parseInt(match.params.contactId))
     setContact(contact)
-  }, [])
+  }, [contacts, match.params.contactId])
   
   return( 
     <>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { SET_CONTACTS, ADD_CONTACT } from '../store/type';
 import { getContacts, postContact } from '../api';
 import Collection from './Collection';
@@ -10,7 +10,6 @@ import styles from './App.module.sass';
 const App = () => {
 
   const dispatch = useDispatch()
-  const contacts = useSelector(state => state.contact.contacts)
 
   useEffect(() => {
     getContacts()
