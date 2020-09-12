@@ -1,11 +1,13 @@
+const ENDPOINT = "http://localhost:3000/v1/contacts"
+
 export const getContacts = () => {
-  return fetch("http://localhost:3000/v1/contacts")
+  return fetch(ENDPOINT)
   .then(r => r.json())
 }
 
 export const postContact = (contact) => {
   console.log("POST CONTACT:", contact)
-  return fetch(`http://localhost:3000/v1/contacts`, {
+  return fetch(ENDPOINT, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -13,4 +15,11 @@ export const postContact = (contact) => {
     body: JSON.stringify(contact)
   })
   .then(r => r.json())
+}
+
+export const deleteContact = (contactId) => {
+  console.log("DELETE CONTACT:", contactId)
+  return fetch(`${ENDPOINT}/${contactId}`, {
+    method: 'DELETE'
+  })
 }
