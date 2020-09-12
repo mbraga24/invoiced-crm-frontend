@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { SET_CONTACTS, ADD_CONTACT } from '../store/type';
-import { getContacts } from '../api';
+import { getContacts, postContact } from '../api';
 import Collection from './Collection';
 import Show from './Show';
 import styles from './App.module.sass';
@@ -17,8 +17,16 @@ const App = () => {
     .then(contacts => dispatch({ type: SET_CONTACTS, payload: contacts }))
   }, [dispatch])
 
-  const addContact = newContactInfo => {
-    const newId = contacts[contacts.length - 1].id + 1
+  const addContact = newContact => {
+    // create contact with the correct 
+    // const newContact = { 
+    //   first_name: newContactInfo.firstName, 
+    //   last_name: newContactInfo.lastName, 
+    //   email: newContactInfo.email 
+    // }
+    postContact(newContact)
+    .then(newContact => dispatch({ type: ADD_CONTACT, payload: newContact }))
+
     dispatch({ type: ADD_CONTACT, payload: { id: newId, first_name: newContactInfo.firstName, last_name: newContactInfo.lastName, email: newContactInfo.email } })
   }
   
