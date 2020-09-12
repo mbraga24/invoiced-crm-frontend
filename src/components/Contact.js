@@ -9,7 +9,7 @@ const Contact = props => {
   const dispatch = useDispatch()
 
   const removeContact = () => {
-    dispatch({ type: "REMOVE_CONTACT", payload: props.id})
+    dispatch({ type: REMOVE_CONTACT, payload: props.id})
   }
 
   return (
