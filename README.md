@@ -204,12 +204,12 @@ const renderContacts = () => {
 
 import { useDispatch, useSelector } from 'react-redux';
 
-  const dispatch = useDispatch() <======== Assign dispatch variable
+  const dispatch = useDispatch() <======== Assign the dispatch function to dispatch variable
 
   useEffect(() => {
     fetch("http://localhost:3000/v1/contacts")
     .then(r => r.json())
-    // set your dispatch with the type and payload
+    // pass the type and payload as parameters to the dispatch function
     .then(contacts => dispatch({ type: SET_CONTACTS, payload: contacts }))
   }, [])
 
@@ -226,7 +226,7 @@ const reducer = (state = defaultContacts, action) => {
     case SET_CONTACTS: 
       return {
         ...state, 
-        contacts: action.payload <======= Set array of contacts to state
+        contacts: action.payload <======= Set the array of contacts returned from fetch to the global state
       }
     default:
       return state
