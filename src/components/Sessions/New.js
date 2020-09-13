@@ -1,15 +1,28 @@
 import React from 'react';
-import styles from './New.module.sass'
+import useFormFields from '../../hooks/useFormFields';
+import styles from './New.module.sass';
 
 const New = props => {
-  console.log("NEW FORM")
+
+  
+  const [ fields, handleFieldChange ] = useFormFields({
+    email: "",
+    password: ""
+  })
+
+  
+  const handleSubmit = event => {
+    event.preventDefault()
+    console.log(fields)
+  }
+
   return (
     <div className={styles.signInForm}>      
-      <form className='pure-form pure-form-stacked'>
+      <form className='pure-form pure-form-stacked' onSubmit={handleSubmit}>
         <label>Email</label>
-        <input type="email" placeholder="email" className="pure-input-1"/>
+        <input type="email" name="email" placeholder="email" className="pure-input-1" onChange={handleFieldChange} />
         <label>Password</label>
-        <input type="password" placeholder="email" className="pure-input-1"/>
+        <input type="password" name="password" placeholder="email" className="pure-input-1" onChange={handleFieldChange}/>
         <button className={`pure-button pure-input-1 ${styles.signInButton}`}>
           Sign In
         </button>
