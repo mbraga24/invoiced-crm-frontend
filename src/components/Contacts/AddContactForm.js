@@ -1,46 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
+import userInputState from '../../hooks/userInputState';
 import './AddContactForm.sass';
 
-class AddContactForm extends Component {
+const AddContactForm = props => {
 
-  state = {
-    email: "",
-    firstName: "",
-    lastName: ""
-  }
+  const [ email, updateEmail, resetEmail ] = userInputState("")
+  const [ firstName, updateFirstName, resetFirstName ] = userInputState("")
+  const [ lastName, updateLastName, resetLastName ] = userInputState("")
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault()
-    this.props.addContact(this.state)
-    this.setState({
-      email: "",
-      firstName: "",
-      lastName: ""
-    });
+    // create newContact object
+    const newContact = { email, firstName, lastName }
+    // pass newContact object as argument to addContact function
+    props.addContact(newContact)
+    // clear input fields
+    resetEmail()
+    resetFirstName()
+    resetLastName()
   }
 
-  render() {
-    console.log(this.state)
-    return (
-      <div className="pure-g">
-        <div className="pure-u-12-24">
-          <form className="pure-form" onSubmit={this.handleSubmit}>
-            <fieldset>
-                <legend>New Contact</legend>
-                <input name="email" type="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
-                <input name="firstName" type="text" placeholder="First Name" value={this.state.firstName} onChange={this.handleChange} />
-                <input name="lastName" type="text" placeholder="Last Name" value={this.state.lastName} onChange={this.handleChange} />
-                <button type="submit" className="pure-button pure-button-primary">Add</button>
-            </fieldset>
-          </form>
-        </div>
+  return (
+    <div className="pure-g">
+      <div className="pure-u-12-24">
+        <form className="pure-form" onSubmit={handleSubmit}>
+          <fieldset>
+              <legend>New Contact</legend>
+              <input name="email" type="email" placeholder="Email" value={email} onChange={updateEmail} />
+              <input name="firstName" type="text" placeholder="First Name" value={firstName} onChange={updateFirstName} />
+              <input name="lastName" type="text" placeholder="Last Name" value={lastName} onChange={updateLastName} />
+              <button type="submit" className="pure-button pure-button-primary">Add</button>
+          </fieldset>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default AddContactForm;
